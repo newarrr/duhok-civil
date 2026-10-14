@@ -8,6 +8,8 @@ passwordMismatch:['كلمتا المرور غير متطابقتين.','هەرد
 nameInvalid:['أدخل الاسم من حرفين على الأقل.','ناڤەکێ ژ دوو پیتان یان زێدەتر بنڤیسە.','ناوێک بە دوو پیت یان زیاتر بنووسە.','Enter a name with at least two characters.']
 });
 let language='badini',tab='login';try{const stored=localStorage.getItem('cd-language');if(stored==='ku')language='badini';else if(window.CD_i18n.ids.includes(stored))language=stored;}catch{}
+const requestedAccountLanguage=new URLSearchParams(location.search).get('lang');
+if(window.CD_i18n.ids.includes(requestedAccountLanguage))language=requestedAccountLanguage;
 const get=key=>dictionary[key][{ar:0,badini:1,sorani:2,en:3}[language]];
 const query=s=>document.querySelector(s);
 function render(){document.documentElement.lang=window.CD_i18n.tags[language];document.documentElement.dataset.locale=language;document.documentElement.dir=language==='en'?'ltr':'rtl';document.querySelectorAll('[data-copy]').forEach(el=>el.textContent=get(el.dataset.copy));document.querySelectorAll('[data-language]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.language===language)));query('.account-branding img').alt=get('brand')+get('location');document.title=`${get(tab)} — ${get('brand')}`;query('.account-back').href='index.html?lang='+language;query('.account-drafts').href='portal.html?portal=drafts&lang='+language;query('#form-title').textContent=get(tab);query('#form-description').textContent=get(tab==='login'?'loginDesc':'signupDesc');query('#account-submit [data-copy]').textContent=get(tab);query('#password-toggle').setAttribute('aria-label',get(query('#account-password').type==='password'?'showPassword':'hidePassword'));}
