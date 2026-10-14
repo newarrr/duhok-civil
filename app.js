@@ -18,6 +18,7 @@ const $=(selector)=>document.querySelector(selector);
 const esc=(value)=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let lang='ar',filter='all',toastTimer;
 try{const saved=localStorage.getItem('cd-language');if(['ar','ku','en'].includes(saved))lang=saved;}catch{}
+const requestedLanguage=new URLSearchParams(location.search).get('lang');if(['ar','ku','en'].includes(requestedLanguage))lang=requestedLanguage;
 const index=()=>({ar:0,ku:1,en:2}[lang]);
 const tr=key=>copy[key]?.[index()]??key;
 const localized=values=>values[index()];

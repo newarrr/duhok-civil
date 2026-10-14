@@ -10,4 +10,4 @@ document.querySelectorAll('[data-tab]').forEach(button=>{button.addEventListener
 query('#password-toggle').addEventListener('click',()=>{const visible=query('#account-password').type==='password';query('#account-password').type=visible?'text':'password';query('#password-toggle').setAttribute('aria-pressed',String(visible));render();});
 query('#account-form').addEventListener('submit',event=>{event.preventDefault();query('#account-password').value='';query('#account-password').type='password';query('#password-toggle').setAttribute('aria-pressed','false');query('#account-message').textContent=get('unavailable');if(query('#remember-language').checked){try{localStorage.setItem('cd-language',language);}catch{}}render();});
 query('#forgot-password').addEventListener('click',()=>query('#account-message').textContent=get('forgotMessage'));
-render();
+if(new URLSearchParams(location.search).get('tab')==='signup')setTab('signup');else render();
