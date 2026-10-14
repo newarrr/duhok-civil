@@ -1,13 +1,11 @@
 # Duhok Civil Defense Portal
 
-Public static deployment of the independently developed Duhok Civil Defense website.
-
 Website: https://newarrr.github.io/duhok-civil-defense-portal/
 
-Arabic, Kurdish and English. Uses the project owner's supplied logo. Illustrative hero image generated with ImageGen.
+Four independent interfaces: Duhok Badini, Sorani, Arabic and English. The editable HTML interface preserves the supplied logo and uses an illustrative generated hero.
 
-This is a development preview. Draft requests stay in the visitor's browser and are not submitted to the directorate. Account forms are not connected to an authentication server and do not store or send passwords. No personal records, credentials or private project files are included in this repository.
+Source summaries link to government publications and carry review dates. Local centers, official service requirements, fees, statistics and local news await approved directorate data; they are not fabricated. Badini and Sorani translations are drafts requiring local language review.
 
-GitHub Pages publishing source: `main`, `/(root)`. `.nojekyll` enables direct static-file hosting.
+Account authentication and official submission remain inactive. Drafts stay in the visitor browser; passwords are neither stored nor submitted.
 
-The requested exact visual match uses the supplied original reference image with accessible HTML links and buttons over its interactive regions. This is an image-backed composition, not a reconstruction of every pictured text element as HTML. The responsive, multilingual service interface remains available at `portal.html`. Statistics and news pictured in the reference are illustrative; their status is disclosed below the artwork and in news dialogs.
+GitHub Pages publishes main at the repository root; .nojekyll disables Jekyll.
