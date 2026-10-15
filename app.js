@@ -70,3 +70,5 @@ const soraniDistricts=['دهۆک','زاخۆ','سێمێل','ئامێدی','ئاک
 const facts=document.createElement('div');facts.className='hero-facts';facts.innerHTML=`<div>${icon('phone')}<strong dir="ltr">115</strong><span data-i18n="fact1"></span></div><div>${icon('users')}<strong dir="ltr">4</strong><span data-i18n="fact2"></span></div><div>${icon('shield')}<strong dir="ltr">3</strong><span data-i18n="fact3"></span></div>`;$('.hero-copy').append(facts);
 translate();document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));
 if(new URLSearchParams(location.search).get('portal')==='drafts')openPortal();
+
+const requestedService=new URLSearchParams(location.search).get('service');if(requestedService&&services.some(s=>s.id===requestedService))openService(requestedService);
